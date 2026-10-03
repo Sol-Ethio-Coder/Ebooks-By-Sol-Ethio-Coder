@@ -1,15 +1,8 @@
 // POSTERS & STORE LINKS live in links.js (keyed by slug). Everything else about a book lives here.
 // ADD A BOOK: copy one object below, give it a unique id + slug, then add the same slug in links.js.
-// Anything in [BRACKETS] is a placeholder to replace. `pages: 0` hides the page count.
+// Chapters and learning cards marked SAMPLE should be matched to the real books. Anything in [BRACKETS] is a placeholder. `pages: 0` hides the page count.
 import { stores } from "./site.js";
 import { assets } from "./links.js";
-
-const placeholderLearn = [
-  { title: "Practical lessons", text: "[WHAT READERS LEARN #1]" },
-  { title: "Key concepts", text: "[WHAT READERS LEARN #2]" },
-  { title: "Real-world examples", text: "[WHAT READERS LEARN #3]" },
-  { title: "Exercises & projects", text: "[WHAT READERS LEARN #4]" },
-];
 
 const rawBooks = [
   {
@@ -17,11 +10,20 @@ const rawBooks = [
     title: "ቀላል ኑር፣ በጥልቀት ኑር",
     subtitle: "ትንንሽ ልማዶች • ግልጽ አስተሳሰብ • የተረጋጋ ሕይወት",
     author: "Solomon Ashagre",
-    description: "ትንንሽ ልማዶች፣ ግልጽ አስተሳሰብና የተረጋጋ ሕይወት ላይ የሚያተኩር መጽሐፍ። [EDIT DESCRIPTION]",
+    description: "ቀላል ኑሮን በጥልቀት ለመኖር የሚረዱ ትንንሽ ልማዶች፣ ግልጽ አስተሳሰብና የተረጋጋ ሕይወት ላይ የሚያተኩር መጽሐፍ።",
     theme: ["#7a1f1f", "#e8a45a"],
     category: "Personal Development", publicationDate: "2026", pages: 0, language: "Amharic",
-    status: "Published", featured: false, previewUrl: "#", learn: placeholderLearn,
-    chapters: [{ title: "[CHAPTER 1 TITLE]", summary: "[CHAPTER SUMMARY]" }],
+    status: "Published", featured: false, previewUrl: "#",
+    learn: [ // SAMPLE: based on the cover's three themes; adjust to match the book
+      { title: "ትንንሽ ልማዶች", text: "ዕለት ተዕለት ሕይወትን የሚቀይሩ ቀላል ልማዶችን መገንባት።" },
+      { title: "ግልጽ አስተሳሰብ", text: "ሐሳብን ማጥራትና ውሳኔዎችን በግልጽ መወሰን።" },
+      { title: "የተረጋጋ ሕይወት", text: "ውጥረትን ቀንሶ ሰላም ያለው አኗኗር መምራት።" },
+    ],
+    chapters: [ // SAMPLE: replace with the real contents of the book
+      { title: "ትንንሽ ልማዶች", summary: "ዕለታዊ ሕይወትን በሚቀይሩ ቀላል ልማዶች መጀመር።" },
+      { title: "ግልጽ አስተሳሰብ", summary: "ሐሳብን ማጥራትና በግልጽ ማሰብ።" },
+      { title: "የተረጋጋ ሕይወት", summary: "ውስጣዊ ሰላምና የተረጋጋ አኗኗር።" },
+    ],
   },
   {
     id: 2, slug: "computer-basics-for-beginners",
@@ -57,14 +59,22 @@ const rawBooks = [
     title: "Coding vs Programming",
     subtitle: "Understanding the Difference and Building Real Programming Skills",
     author: "Solomon Ashagre",
-    description: "A beginner-friendly guide to the difference between coding and programming, with detailed explanations, examples and beginner projects. [CONFIRM / EDIT DESCRIPTION]",
+    description: "A beginner-friendly guide that explains the difference between coding and programming, then takes you from problem to algorithm to working code, with clear examples, practice at the end of each chapter, a learning roadmap and seven beginner projects.",
     theme: ["#1b2a5a", "#0e8aa8"],
     category: "Programming", publicationDate: "2026", pages: 102, language: "English",
-    status: "Published", featured: true, previewUrl: "#", learn: placeholderLearn,
-    chapters: [
-      { title: "[CHAPTER 1 TITLE]", summary: "[CHAPTER SUMMARY]" },
-      { title: "[CHAPTER 2 TITLE]", summary: "[CHAPTER SUMMARY]" },
-      { title: "[CHAPTER 3 TITLE]", summary: "[CHAPTER SUMMARY]" },
+    status: "Published", featured: true, previewUrl: "#",
+    learn: [
+      { title: "The real difference", text: "Understand what coding and programming mean, and how they relate." },
+      { title: "Think like a programmer", text: "Turn problems into algorithms, then into working code." },
+      { title: "Build real projects", text: "Practise with seven beginner projects." },
+      { title: "Plan your path", text: "Explore career options and follow a clear learning roadmap." },
+    ],
+    chapters: [ // SAMPLE chapter titles (Career, Roadmap, Projects and Glossary are real): match the rest to your ebook
+      { title: "What is coding?", summary: "Writing instructions a computer can follow, and where it fits." },
+      { title: "What is programming?", summary: "The bigger picture: solving problems with software." },
+      { title: "Coding vs programming: the real difference", summary: "Where the two overlap, where they don't, and why it matters." },
+      { title: "From problem to algorithm", summary: "Breaking a problem down into clear, ordered steps." },
+      { title: "From algorithm to code to program", summary: "Turning your steps into code and your code into a working solution." },
       { title: "Career paths", summary: "Where programming skills can take you." },
       { title: "Roadmap", summary: "A step-by-step plan for what to learn next." },
       { title: "Seven beginner projects", summary: "Build real things to practise what you learned." },
