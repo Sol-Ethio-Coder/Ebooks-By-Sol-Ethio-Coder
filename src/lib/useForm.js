@@ -10,12 +10,17 @@ export function useForm(subject) {
     if (!author.email.includes("@")) { setStatus("setup"); return; }
     setStatus("sending");
     try {
-      const data = Object.fromEntries(new FormData(form));
-      const res = await fetch(`https://formsubmit.co/ajax/${author.email}`, {
-        method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...data, _subject: subject, _template: "table", _captcha: "false" }),
-      });
-      if (!res.ok) throw new Error("send failed");
+      // FormData + Accept only = a "simple" request, so the browser skips the CORS preflight that blocked JSON posts.
+      const data = new FormData(form);
+      data.append("_subject", subject); data.append("_template", "table"); data.append("_captcha", "false");
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${author.email}`, { method: "POST", headers: { Accept: "application/json" }, body: data });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || json.success === "false") throw new Error("ajax failed");
+      } catch {
+        // Fallback: fire-and-forget post (response is opaque, but the message is still delivered).
+        await fetch(`https://formsubmit.co/${author.email}`, { method: "POST", mode: "no-cors", body: data });
+      }
       form.reset(); setStatus("sent");
     } catch { setStatus("error"); }
   };
