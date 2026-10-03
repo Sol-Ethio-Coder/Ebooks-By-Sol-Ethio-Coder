@@ -4,7 +4,7 @@
 
 **A premium author website to showcase and promote the published books of Solomon Ashagre.**
 
-[**Live site**](https://YOUR-SITE.vercel.app) · [Ye-Buna store](https://ye-buna.com/solethiocoder) · [Ye-Shay store](https://ye-shay.com/stcaacademy) · [Portfolio](https://sol-ethio-coder.netlify.app/)
+[**Live site**](https://sol-ebooks.vercel.app) · [Ye-Buna store](https://ye-buna.com/solethiocoder) · [Ye-Shay store](https://ye-shay.com/stcaacademy) · [Portfolio](https://sol-ethio-coder.netlify.app/)
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
@@ -14,7 +14,7 @@
 
 </div>
 
-<!-- Replace https://YOUR-SITE.vercel.app (above) with your real Vercel or custom-domain address. -->
+<!-- Live address: update this if you add a custom domain. -->
 
 ## Overview
 
