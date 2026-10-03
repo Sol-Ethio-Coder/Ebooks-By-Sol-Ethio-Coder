@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@theme inline {
+  --color-bg: var(--bg); --color-ink: var(--ink); --color-mute: var(--mute);
+  --color-gold: var(--gold); --color-iris: var(--iris); --color-card: var(--card); --color-line: var(--line);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+}
+:root { --bg:#faf7f2; --ink:#17141f; --mute:#625d6e; --gold:#9a6a14; --iris:#3b4cca; --card:rgba(255,255,255,.72); --line:rgba(23,20,31,.12); --shadow:0 20px 50px -20px rgba(23,20,31,.25); }
+.dark { --bg:#0c0b10; --ink:#f4efe6; --mute:#a29db0; --gold:#e0b25a; --iris:#8b7cf6; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.12); --shadow:0 25px 60px -20px rgba(0,0,0,.8); }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); transition: background .5s, color .5s; overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.glass { background: var(--card); border: 1px solid var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.btn { display:inline-flex; align-items:center; gap:.5rem; min-height:44px; padding:.8rem 1.4rem; border-radius:999px; font-weight:600; font-size:.95rem; transition: transform .25s, box-shadow .25s, background .25s; }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(.97); }
+.btn-gold { background: var(--gold); color: #0c0b10; box-shadow: 0 10px 30px -10px var(--gold); }
+.btn-ghost { border: 1px solid var(--line); background: var(--card); }
+.grain::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.07; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+@keyframes drift { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(40px,-30px,0) scale(1.15); } }
+.orb { position:absolute; border-radius:50%; filter: blur(90px); animation: drift 18s ease-in-out infinite; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .orb { animation: none; } html { scroll-behavior: auto; } }
