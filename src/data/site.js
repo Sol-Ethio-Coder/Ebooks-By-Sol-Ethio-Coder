@@ -6,7 +6,8 @@ export const author = {
   bio: "I'm Solomon Ashagre, writing as Sol Ethio Coder: a computing teacher and MERN stack developer based in Addis Ababa, Ethiopia, with a BSc in Computer Science from Addis Ababa University. My books explain computing and programming in plain language for people starting from zero, and also explore simple, calm living, in English and Amharic.",
   philosophy: "Learn, practice, build, share, grow. A good book explains one idea clearly, gives you something to try, and leaves you able to do it yourself. I write simply, use real examples, and end chapters with practice so the learning sticks.",
   interests: ["Programming", "Computer literacy", "Education", "Web development", "Personal development"],
-  email: "solash5156@gmail.com", // PUT YOUR EMAIL HERE: contact + newsletter forms are delivered to it
+  email: "solethiocoder@gmail.com", // PUT YOUR EMAIL HERE: contact + newsletter forms are delivered to it
+  web3formsKey: "691ad21f-07fc-4530-a7fd-5d1577066f63", // RECOMMENDED: paste your free Web3Forms access key (web3forms.com). When set, it is used instead of FormSubmit.
   formId: "", // OPTIONAL: FormSubmit's random ID. When set, it replaces your email in the page code so spam bots can't find it.
   // Icons show only for entries that have an href. Paste your profile URLs below.
   socials: [
