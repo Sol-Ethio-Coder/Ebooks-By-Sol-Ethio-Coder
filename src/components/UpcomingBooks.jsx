@@ -7,7 +7,7 @@ import { useForm, statusText } from "../lib/useForm.js";
 import { author, upcoming, upcomingStages } from "../data/site.js";
 
 function NotifyDialog({ item, onClose }) {
-  const { status, onSubmit } = useForm(`Notify me: ${item.title}`);
+  const { status, onSubmit } = useForm(`Notify me: ${item.title}`, `Thanks! I'll email you as soon as "${item.title}" is released. — Solomon (Sol Ethio Coder)`);
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey); document.body.style.overflow = "hidden";

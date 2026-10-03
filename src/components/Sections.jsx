@@ -133,7 +133,7 @@ export function Testimonials() {
 }
 
 export function Newsletter() {
-  const { status, onSubmit } = useForm("New newsletter subscriber");
+  const { status, onSubmit } = useForm("New newsletter subscriber", "Thanks for subscribing! I'll email you about new books and projects. — Solomon (Sol Ethio Coder)");
   return (
     <section id="newsletter" className="mx-auto max-w-3xl px-5 py-16 md:py-24 text-center">
       <Reveal>
@@ -153,7 +153,7 @@ export function Newsletter() {
 }
 
 export function Contact() {
-  const { status, onSubmit } = useForm("New message from your website");
+  const { status, onSubmit } = useForm("New message from your website", "Thanks for contacting me. I received your message and will reply soon. — Solomon (Sol Ethio Coder)");
   const f = "w-full rounded-xl border border-line bg-card px-4 py-3 outline-none focus:border-gold";
   return (
     <section id="contact" className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:py-24 md:grid-cols-[.8fr_1.2fr]">
